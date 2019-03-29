@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+  <button v-on:click="great">Great</button>
+</div>
+
+<script>
+
+  <!-- 事件处理器,触发事件 -->
+  import {Vue} from 'vue/types/vue'
+
+  var app = new Vue({
+    el:'#app',
+    data:{
+      name:'Vue.js'
+    },
+    methods:{
+      great:function (event) {
+        alert('hello'+this.name+'!')
+        if (event) {
+          alert(event.target.tagName)
+        }
+      }
+    }
+  })
+
+  app.great() // ->'hello Vue.js'
+</script>
+
+</body>
+</html>

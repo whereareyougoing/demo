@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="computer_counter">
+    千米：<input type="text" v-model="kilometers">
+    米：<input type="text" v-model="meters">
+</div>
+<p id="info"></p>
+
+<script>
+  import {Vue} from 'vue/types/vue'
+
+  var vm = new Vue ({
+    el:'#computer_counter',
+    data:{
+      kilometers:0,
+      meters:0
+    },
+    computed:{
+
+    },
+    methods:{
+
+    },
+    watch:{
+      kilometers: function (val) {
+        this.kilometers = val;
+        this.meters = val*1000;
+      },
+
+      meters:function (val) {
+        this.kilometers = val/1000;
+        this.meters = val;
+      }
+    }
+  });
+
+  vm.$watch('kilometers',function (newValue, oldValue) {
+    // 这个回调将在vm.kilometers 改变后调用
+    document.getElementById("info").innerHTML = "修改前的数值为："+oldValue+"修改后的数值为："+newValue;
+  })
+
+
+
+</script>
+</body>
+</html>

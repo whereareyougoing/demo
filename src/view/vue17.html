@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div>
+    <button v-on:click="say('hi')">say</button>
+    <button v-on:click="say('vue.js')">vue.js</button>
+  </div>
+
+  <script>
+
+    import {Vue} from 'vue/types/vue'
+
+    new Vue({
+      el:'#app',
+      data:{
+
+      },
+      methods:{
+        say : function (message) {
+          alert(message)
+        }
+      }
+    })
+
+
+  //  事件修饰符
+    // 按键修饰符
+
+  </script>
+
+</body>
+</html>

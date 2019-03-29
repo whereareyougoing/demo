@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+  <!-- vue 提供了完全的js的表达式支持 -->
+  {{5+5}}<br>
+  {{ ok ? 'yes' : 'no' }}<br>
+  {{ message.split('').reverse().join('') }}
+  <div v-bind:id="'list-' + id">菜鸟教程</div>
+
+</div>
+
+<script>
+
+  import {Vue} from 'vue/types/vue'
+
+  new Vue ({
+    el: '#app',
+    data : {
+      ok : true,
+      message : 'runoob',
+      id : 1
+    }
+  })
+
+
+</script>
+
+</body>
+</html>

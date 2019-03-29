@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <ol v-for="site in sites">
+    <li>{{ site.name }}</li>
+  </ol>
+
+  <ul>
+    <!-- 模板的作用是将一个模块绑定成一个整体 -->
+    <template v-for="site in sites">
+      <li>{{ site.name }}</li>
+      <li>--------</li>
+    </template>
+  </ul>
+
+  <!-- value可以直接代表object里的value值 -->
+  <ol v-for="value in object">
+    <li>{{ value }}</li>
+  </ol>
+
+  <ol v-for="(value,key) in object">
+    <li>
+      {{ key }} : {{ value }}
+    </li>
+  </ol>
+
+  <ol v-for="(value,key,index) in object">
+    <li> {{ index }}.{{ key }} : {{ value }} </li>
+  </ol>
+
+  <ul v-for="n in 10">
+    <li>{{ n }}</li>
+  </ul>
+
+
+</div>
+
+<script>
+  import {Vue} from 'vue/types/vue'
+
+  new Vue({
+    el:'#app',
+    data:{
+      sites:[
+        {name:'runoob'},
+        {name:'google'},
+        {name:'taobao'}
+      ],
+      object:{
+        name:'zhangsan',
+        age:'18',
+        sex:'male'
+      }
+  }
+  })
+</script>
+
+
+</body>
+</html>

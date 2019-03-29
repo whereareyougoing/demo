@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <pre><a v-bind:href="url">菜鸟教程</a></pre>
+  <a v-on:click="doSomething"></a>
+  <form v-on:submit.prevent="onSubmit"></form>
+</div>
+
+<script>
+  import Vue from 'vue'
+
+  new Vue ({
+    el:'#app',
+    data:{
+      url : 'www.runoob.com',
+      doSomething:'点击事件一般需要绑定method',
+      onSubmit:'表单提交事件'
+    }
+  })
+</script>
+
+</body>
+</html>

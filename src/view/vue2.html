@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div id="app">
+    <p/>{{ message }}
+    <!--绑定html输出的代码-->
+    <div v-html="message"></div>
+  </div>
+  <script>
+
+    import {Vue} from 'vue/types/vue'
+
+    new Vue({
+      el:'#app',
+      data: {
+        message: '<h1>菜鸟教程</h1>'
+      }
+    })
+  </script>
+</body>
+</html>

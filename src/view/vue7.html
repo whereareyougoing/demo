@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <p>{{ message }}</p>
+  <!--在 input 输入框中我们可以使用 v-model 指令来实现双向数据绑定-->
+  <!--v-model 指令用来在 input、select、text、checkbox、radio 等表单控件元素上创建双向数据绑定，
+  根据表单上的值，自动更新绑定的元素的值。按钮的事件我们可以使用 v-on 监听事件，并对用户的输入进行响应。-->
+  <input v-model="message">
+
+  <!--Vue.js 允许你自定义过滤器，被用作一些常见的文本格式化。由"管道符"指示-->
+  <p>{{ message | capitalize }}</p>
+  <div v-bind:id="rowId | formatId"></div>
+
+</div>
+<script>
+
+  import Vue from 'vue'
+
+  new Vue({
+    el:'#app',
+    data:{
+      message:'runoob',
+      capitalize:'123',
+      id:'rowId'
+    }
+  })
+
+
+</script>
+
+
+</body>
+</html>

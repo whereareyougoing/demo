@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <p v-if="seen">你现在可以看到我了</p>
+  <template v-if="ok">
+    <h1>123123</h1>
+    <p>35345345</p>
+    <p>345345</p>
+  </template>
+
+  <div v-if="Math.random()>0.5">
+    <p>sorry</p>
+  </div>
+  <div v-else>
+    <p>thanks</p>
+  </div>
+
+
+  <div v-if="type === 'a'">
+    A
+  </div>
+  <div v-else-if="type === 'b'">
+    B
+  </div>
+  <div v-else-if="type === 'c'">
+    C
+  </div>
+  <div v-else>
+    NOT A B C
+  </div>
+
+  <div v-show="ok">hello</div>
+
+
+</div>
+<script>
+
+  import {Vue} from 'vue/types/vue'
+
+  new Vue({
+    el:'#app',
+    data:{
+      seen:true,
+      ok:true,
+      type:'c'
+    }
+  })
+
+</script>
+
+</body>
+</html>
