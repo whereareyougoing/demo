@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div id="app">
+      <p>页面加载的时候输入框获取焦点</p>
+      <input v-focus>
+  </div>
+
+<script>
+
+  Vue.directive('focus',{
+    // 这里的el参数指的是dom对象
+    inserted:function (el) {
+      el.focus()
+    }
+  });
+
+  new Vue({
+    el:'#app'
+  });
+
+
+</script>
+
+</body>
+</html>

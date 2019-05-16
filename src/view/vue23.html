@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div id="app">
+      <child message="hello!!!"></child>
+  </div>
+<script>
+
+  <!--  注册组件 -->
+  Vue.componenet('child',{
+    props:['message'],
+      template:'<span>{{ message }}</span>'
+  })
+
+  // 定位根节点
+  new Vue({
+    el:'#app'
+  });
+</script>
+</body>
+</html>
